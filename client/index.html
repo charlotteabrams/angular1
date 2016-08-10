@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- ng-app creates angular model being used in this app -->
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <title>First Angular App</title>
+ <!--  this script source tells the app where the angular code is located and retrieves it -->
+  <script src = './angular/angular.js'>
+  </script>
+  <script>
+  //instantiates the app to be used throughout the file
+  var app = angular.module('app', []);
+   
+  app.controller('divController', function($scope){
+    $scope.myName = "Charlotte";
+    $scope.myFavoriteLanguage = "Python";
+    $scope.myFavoriteJSLibrary = "Angular";
+  });
+
+  </script>
+</head>
+<body>
+    <div ng-controller="divController">
+    	<p>{{myName}}</p>
+    	<p>{{myFavoriteLanguage}}</p>
+    	<p>{{myFavoriteJSLibrary}}</p>
+    </div>
+</body>
+</html>
